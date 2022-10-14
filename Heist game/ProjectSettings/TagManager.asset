@@ -12,6 +12,7 @@ TagManager:
   - normaldoor
   - lockeddoor
   - beam
+  - waypoint
   layers:
   - Default
   - TransparentFX
