@@ -7,7 +7,10 @@ public class EnemyGuard : MonoBehaviour
 
     public Transform[] waypoints;
     public int targetPoint;
-    public float speed;
+    public float speed = 1;
+    public GameObject guard;
+    private Vector3 angles;
+    public float smooth = 1f;
     void Start()
     {
         targetPoint = 0;
@@ -15,10 +18,13 @@ public class EnemyGuard : MonoBehaviour
 
     void Update()
     {
+        //checks if guard is on waypoint
         if(transform.position == waypoints[targetPoint].position)
         {
-            //when on waypoint goes to "IncreaseTargetInt"
+   
             increaseTargetInt();
+            Turn();
+
         }
         //makes guard go to waypoint
         transform.position = Vector3.MoveTowards(transform.position, waypoints[targetPoint].position, speed * Time.deltaTime);
@@ -33,5 +39,11 @@ public class EnemyGuard : MonoBehaviour
         {
             targetPoint = 0;
         }
+    }
+private void Turn()
+    {
+        //makes guard turn around
+        angles = transform.eulerAngles + 180f * Vector3.forward;
+        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, angles, smooth);
     }
 }
