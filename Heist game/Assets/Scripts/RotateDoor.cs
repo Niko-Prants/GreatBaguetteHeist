@@ -8,6 +8,7 @@ public class RotateDoor : MonoBehaviour
     [SerializeField] private float speed = 50;
     void Update()
     {
+        //rotates rotating door
         transform.Rotate(0, 0, speed * Time.deltaTime);
         
     }

@@ -4,40 +4,34 @@ using UnityEngine;
 
 public class EnemyGuard : MonoBehaviour
 {
+
     public Transform[] waypoints;
-    public int speed;
-
-    private int waypointIndex;
-    private float dis;
-
+    public int targetPoint;
+    public float speed;
     void Start()
     {
-        waypointIndex = 0;
-        transform.LookAt(waypoints[waypointIndex].position);
+        targetPoint = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        dis = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
-        if (dis < 1f)
+        if(transform.position == waypoints[targetPoint].position)
         {
-            IncreaseIndex();
+            //when on waypoint goes to "IncreaseTargetInt"
+            increaseTargetInt();
+        }
+        //makes guard go to waypoint
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[targetPoint].position, speed * Time.deltaTime);
+    }
+    void increaseTargetInt()
+    {
+        //increases target number so the guard changes target and goes to next waypoint
+        targetPoint++;
 
-        }
-        Patrol();
-    }
-    void Patrol()
-    {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-    }
-    void IncreaseIndex()
-    {
-        waypointIndex++;
-        if (waypointIndex >= waypoints.Length)
+        //if target is greater than amount of waypoints ets target to 0
+        if(targetPoint >= waypoints.Length)
         {
-            waypointIndex = 0;
+            targetPoint = 0;
         }
-        transform.LookAt(waypoints[waypointIndex].position);
     }
 }
