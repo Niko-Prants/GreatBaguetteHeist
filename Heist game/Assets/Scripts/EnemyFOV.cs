@@ -9,6 +9,8 @@ public class EnemyFOV : MonoBehaviour
     [Range(0, 360)]
     public float angle = 45;
 
+    public float meshRes;
+
 
     public GameObject playerRef;
 
@@ -51,13 +53,15 @@ public class EnemyFOV : MonoBehaviour
     private void FOV()
     {
         Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, radius, targetMask);
+       
         if(rangeCheck.Length > 0)
         {
             Transform target = rangeCheck[0].transform;
             Vector2 dirToTarget = (target.position - transform.position).normalized;
-
-            if(Vector2.Angle(transform.up, dirToTarget) < angle  / 2)
+           
+            if(Vector2.Angle(transform.up, dirToTarget) < angle  * 0.5f)
             {
+                //if playr is in view, close enough and not behind objects then guard can see player
                 float distToTarget = Vector2.Distance(transform.position, target.position);
                 if(!Physics2D.Raycast(transform.position, dirToTarget, distToTarget, obstructionMask))
                 {
@@ -104,5 +108,6 @@ public class EnemyFOV : MonoBehaviour
        
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
+   
 
 }
