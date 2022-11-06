@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyFOV : MonoBehaviour
 {
 
-    public float radius = 2;
+    public float radius = 1;
     [Range(0, 360)]
     public float angle = 45;
 
@@ -79,15 +79,30 @@ public class EnemyFOV : MonoBehaviour
             canSeePlayer = false;
         }
     }
-    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
+    
+    private void OnDrawGizmos()
     {
-        if(!angleIsGlobal)
+        Gizmos.color = Color.white;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
+
+        Vector3 angle1 = DirFromAngle(-transform.eulerAngles.z, -angle * 0.5f);
+        Vector3 angle2 = DirFromAngle(-transform.eulerAngles.z, angle * 0.5f);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + angle1 * radius);
+        Gizmos.DrawLine(transform.position, transform.position + angle2 * radius);
+
+        if(canSeePlayer)
         {
-            angleInDegrees -= transform.eulerAngles.z;
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position, playerRef.transform.position);
         }
+    }
+    private Vector3 DirFromAngle(float eulerY, float angleInDegrees)
+    {
+            angleInDegrees += eulerY;
+       
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
-    
-
 
 }
