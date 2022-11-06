@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyFOV : MonoBehaviour
 {
 
-    public float radius = 1;
+    public float radius = 2;
     [Range(0, 360)]
     public float angle = 45;
 
-    public float meshRes;
+    
 
 
     public GameObject playerRef;
@@ -102,8 +102,9 @@ public class EnemyFOV : MonoBehaviour
             Gizmos.DrawLine(transform.position, playerRef.transform.position);
         }
     }
-    private Vector3 DirFromAngle(float eulerY, float angleInDegrees)
+    public Vector3 DirFromAngle(float eulerY, float angleInDegrees)
     {
+
             angleInDegrees += eulerY;
        
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
