@@ -5,7 +5,7 @@ using UnityEngine;
 public class Soundsmanager : MonoBehaviour
 {
     public static AudioClip keysound;
-    public static AudioClip bauguettesound;
+    public static AudioClip baguettesound;
     public static AudioClip doorsound;
 
     static AudioSource audioScr;
@@ -13,7 +13,7 @@ public class Soundsmanager : MonoBehaviour
     void Start()
     {
         keysound = Resources.Load<AudioClip>("keysound");
-        bauguettesound = Resources.Load<AudioClip>("baguettesound");
+        baguettesound = Resources.Load<AudioClip>("baguettesound");
         doorsound = Resources.Load<AudioClip>("doorsound");
 
         audioScr = GetComponent<AudioSource>();
@@ -27,7 +27,7 @@ public class Soundsmanager : MonoBehaviour
                 audioScr.PlayOneShot(keysound);
                     break;
             case "baguettesound":
-                audioScr.PlayOneShot(bauguettesound);
+                audioScr.PlayOneShot(baguettesound);
                 break;
             case "doorsound":
                 audioScr.PlayOneShot(doorsound);
