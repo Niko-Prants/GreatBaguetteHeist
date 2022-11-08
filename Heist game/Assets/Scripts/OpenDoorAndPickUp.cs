@@ -17,6 +17,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
     public GameObject NeedKeyCanvas;
     public GameObject PickedUpKey;
     public GameObject FoundBaguette;
+ 
 
     private void Start()
     {
@@ -47,6 +48,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
         //picks up key and enables popup with timer
         if (collision.gameObject.CompareTag("key"))
         {
+            Soundsmanager.PlaySound("keysound");
             pickedUpKey = true;
             key.SetActive(false);
             PickedUpKey.SetActive(true);
@@ -57,6 +59,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
         //opens door
         if (collision.CompareTag("normaldoor"))
         {
+            Soundsmanager.PlaySound("doorsound");
             normalDoor.SetActive(false);
         }
         if (collision.CompareTag("lockeddoor"))
@@ -67,6 +70,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
             //opens door if has key
             if (pickedUpKey == true)
             {
+                Soundsmanager.PlaySound("doorsound");
                 lockedDoor.SetActive(false);
             }
         }
@@ -74,6 +78,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
         //picks up baguettes and enables popup with timer 
         if (collision.gameObject.CompareTag("baguette1"))
         {
+            Soundsmanager.PlaySound("baguettesound");
             baguetteAmount += 1;
             baguette1.SetActive(false);
             FoundBaguette.SetActive(true);
@@ -81,6 +86,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("baguette2"))
         {
+            Soundsmanager.PlaySound("baguettesound");
             baguetteAmount += 1;
             baguette2.SetActive(false);
             FoundBaguette.SetActive(true);
@@ -88,6 +94,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("baguette3"))
         {
+            Soundsmanager.PlaySound("baguettesound");
             baguetteAmount += 1;
             baguette3.SetActive(false);
             FoundBaguette.SetActive(true);
