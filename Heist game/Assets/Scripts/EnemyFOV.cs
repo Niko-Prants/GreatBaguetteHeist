@@ -84,7 +84,8 @@ public class EnemyFOV : MonoBehaviour
         }
     }
     
-    private void OnDrawGizmos()
+    //visuallines for FOV
+    /*private void //OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, radius);
@@ -108,7 +109,7 @@ public class EnemyFOV : MonoBehaviour
             angleInDegrees += eulerY;
        
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-    }
+    }*/
    
 
 }

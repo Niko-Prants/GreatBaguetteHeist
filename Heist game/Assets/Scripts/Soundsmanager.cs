@@ -23,6 +23,7 @@ public class Soundsmanager : MonoBehaviour
     {
         switch (clip)
         {
+            //plays correct sound
             case "keysound":
                 audioScr.PlayOneShot(keysound);
                     break;

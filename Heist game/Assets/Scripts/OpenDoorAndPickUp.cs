@@ -47,6 +47,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
         }
         if(win == true)
         {
+            // if win then brings up win menu
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         }
     }
@@ -64,7 +65,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
 
         }
 
-        //opens door
+        //opens door and plays sound
         if (collision.CompareTag("normaldoor"))
         {
             Soundsmanager.PlaySound("doorsound");
@@ -78,7 +79,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
                 NeedKeyCanvas.SetActive(true);
                 texttimer = 5;
             }
-            //opens door if has key
+            //opens door if has key and plays sound
             if (pickedUpKey == true)
             {
                 Soundsmanager.PlaySound("doorsound");
@@ -86,7 +87,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
             }
         }
 
-        //picks up baguettes and enables popup with timer 
+        //picks up baguettes and enables popup with timer and plays sound
         if (collision.gameObject.CompareTag("baguette1"))
         {
             Soundsmanager.PlaySound("baguettesound");

@@ -37,6 +37,7 @@ public class player : MonoBehaviour
         }
         if(isCaught == true)
         {
+            // if caught then pulls up caught menu
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
