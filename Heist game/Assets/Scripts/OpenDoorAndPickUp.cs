@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OpenDoorAndPickUp : MonoBehaviour
 {
@@ -44,6 +45,10 @@ public class OpenDoorAndPickUp : MonoBehaviour
                 PickedUpKey.SetActive(false);
                 FoundBaguette.SetActive(false);             }
         }
+        if(win == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -67,9 +72,12 @@ public class OpenDoorAndPickUp : MonoBehaviour
         }
         if (collision.CompareTag("lockeddoor"))
         {
-            //tells you to get a key
-            NeedKeyCanvas.SetActive(true);
-            texttimer = 5;
+            if (pickedUpKey == false)
+            {
+                //tells you to get a key
+                NeedKeyCanvas.SetActive(true);
+                texttimer = 5;
+            }
             //opens door if has key
             if (pickedUpKey == true)
             {
