@@ -8,12 +8,14 @@ public class OpenDoorAndPickUp : MonoBehaviour
     GameObject lockedDoor;
     public bool pickedUpKey = false;
     public float texttimer = 0f;
+    public bool win = false;
 
     public int baguetteAmount = 0;
     GameObject key;
     GameObject baguette1;
     GameObject baguette2;
     GameObject baguette3;
+    GameObject goldenBaguette;
     public GameObject NeedKeyCanvas;
     public GameObject PickedUpKey;
     public GameObject FoundBaguette;
@@ -28,6 +30,7 @@ public class OpenDoorAndPickUp : MonoBehaviour
         baguette1 = GameObject.FindGameObjectWithTag("baguette1");
         baguette2 = GameObject.FindGameObjectWithTag("baguette2");
         baguette3 = GameObject.FindGameObjectWithTag("baguette3");
+        goldenBaguette = GameObject.FindGameObjectWithTag("goldenbaguette");
     }
     private void Update()
     {
@@ -101,8 +104,13 @@ public class OpenDoorAndPickUp : MonoBehaviour
             texttimer = 5f;
         }
 
+        if (collision.gameObject.CompareTag("goldenbaguette"))
+        {
+            Soundsmanager.PlaySound("baguettesound");
+            goldenBaguette.SetActive(false);
+            win = true;
+        }
 
-        
     }
 
-}
+}         

@@ -4274,6 +4274,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7335824003178960873, guid: b0d4478e0feccb94d9661dd1ded2fb36, type: 3}
   m_PrefabInstance: {fileID: 7335824002131656909}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1126912830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2008937715213035245, guid: 6dd40ba70b795eb418478d7d135527c4, type: 3}
+  m_PrefabInstance: {fileID: 2008937714158537516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1126912834
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126912830}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.85, y: 3.61}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.85, y: 3.61}
+  m_EdgeRadius: 0
 --- !u!1 &1163841689
 GameObject:
   m_ObjectHideFlags: 0
@@ -8399,7 +8430,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golden Baguette
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2008937715213035245, guid: 6dd40ba70b795eb418478d7d135527c4, type: 3}
+      propertyPath: m_TagString
+      value: goldenbaguette
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008937715213035246, guid: 6dd40ba70b795eb418478d7d135527c4, type: 3}
+      propertyPath: m_Size.y
+      value: 3.6100016
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008937715213035246, guid: 6dd40ba70b795eb418478d7d135527c4, type: 3}
+      propertyPath: m_Center.x
+      value: 0.000000029802372
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008937715213035246, guid: 6dd40ba70b795eb418478d7d135527c4, type: 3}
+      propertyPath: m_Center.y
+      value: 0.0000007152557
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2008937715213035246, guid: 6dd40ba70b795eb418478d7d135527c4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6dd40ba70b795eb418478d7d135527c4, type: 3}
 --- !u!212 &2418681449277318095
 SpriteRenderer:
@@ -9390,7 +9438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1020453735716066897, guid: e8efa1ea6b5dfa140b03583a5eee58e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.39
+      value: -10.4
       objectReference: {fileID: 0}
     - target: {fileID: 1020453735716066897, guid: e8efa1ea6b5dfa140b03583a5eee58e7, type: 3}
       propertyPath: m_LocalPosition.z
