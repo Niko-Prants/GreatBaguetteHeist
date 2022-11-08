@@ -37,7 +37,7 @@ public class player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //catches player if touches beam
-        if (collision.CompareTag("beam"))
+        if (collision.CompareTag("beam") || collision.CompareTag("beam2"))
         {
             isCaught = true;
         }
