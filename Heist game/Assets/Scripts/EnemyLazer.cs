@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EnemyLazer : MonoBehaviour
 {
-    GameObject beam;
+    public GameObject beam;
+    public GameObject beam2;
     GameObject player;
     public float timeRemaining = 3;
     private double sec;
     void Start()
     {
         beam = GameObject.FindGameObjectWithTag("beam");
+        beam2 = GameObject.FindGameObjectWithTag("beam2");
 
 
     }
@@ -35,11 +37,13 @@ public class EnemyLazer : MonoBehaviour
         if(sec % 2 == 0)
         {
             beam.SetActive(false);
+            beam2.SetActive(false);
         }
         //sets beam active when "sec" is odd
         if (sec % 2 == 1)
         {
             beam.SetActive(true);
+            beam2.SetActive(true);
         }
     }
 

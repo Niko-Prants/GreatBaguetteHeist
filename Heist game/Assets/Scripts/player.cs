@@ -5,6 +5,7 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     public float speed = 5f;
+    [SerializeField] public float rspeed;
     public Rigidbody2D rb;
     Vector2 movement;
     public bool isCaught = false;
@@ -23,6 +24,13 @@ public class player : MonoBehaviour
     {
         //sets movement speed accoring to seconds instead of frames
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
+        //rotates player to correct direction if player is moving
+        if(movement != Vector2.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, movement);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rspeed * Time.deltaTime);
+        }
     }
 
 
