@@ -9,6 +9,7 @@ public class player : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movement;
     public bool isCaught = false;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
