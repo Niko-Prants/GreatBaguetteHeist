@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -33,6 +34,10 @@ public class player : MonoBehaviour
         if(script1.caught == true || script2.caught == true || script3.caught == true || script4.caught == true || script5.caught == true)
         {
             isCaught = true;
+        }
+        if(isCaught == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
     }
