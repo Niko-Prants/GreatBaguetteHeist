@@ -9,10 +9,20 @@ public class player : MonoBehaviour
     public Rigidbody2D rb;
     Vector2 movement;
     public bool isCaught = false;
-    
+    public EnemyFOV script1;
+    public EnemyFOV script2;
+    public EnemyFOV script3;
+    public EnemyFOV script4;
+    public EnemyFOV script5;
     void Start()
     {
+        script1.caught = false;
+        script2.caught = false;
+        script3.caught = false;
+        script4.caught = false;
+        script5.caught = false;
         rb = GetComponent<Rigidbody2D>();
+        
     }
     
 
@@ -20,6 +30,11 @@ public class player : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical"); 
+        if(script1.caught == true || script2.caught == true || script3.caught == true || script4.caught == true || script5.caught == true)
+        {
+            isCaught = true;
+        }
+
     }
     void FixedUpdate()
     {

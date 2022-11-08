@@ -196,9 +196,9 @@ GameObject:
   - component: {fileID: 2832151764708046101}
   - component: {fileID: 2832151764708046100}
   - component: {fileID: 2832151764708046103}
+  - component: {fileID: 2832151764708046096}
   - component: {fileID: 2832151764708046102}
   - component: {fileID: 2832151764708046097}
-  - component: {fileID: 2832151764708046096}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -289,6 +289,25 @@ MonoBehaviour:
   rspeed: 720
   rb: {fileID: 2832151764708046102}
   isCaught: 0
+  script1: {fileID: 0}
+  script2: {fileID: 0}
+  script3: {fileID: 0}
+  script4: {fileID: 0}
+  script5: {fileID: 0}
+--- !u!114 &2832151764708046096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832151764708046099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fb68238200c5c429f02f4cbb8c7b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickedUpKey: 0
+  baguetteAmount: 0
 --- !u!50 &2832151764708046102
 Rigidbody2D:
   serializedVersion: 4
@@ -326,20 +345,6 @@ CircleCollider2D:
   m_Offset: {x: -0.058254242, y: 0.0028038025}
   serializedVersion: 2
   m_Radius: 1.5058937
---- !u!114 &2832151764708046096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2832151764708046099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2fb68238200c5c429f02f4cbb8c7b47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickedUpKey: 0
-  baguetteAmount: 0
 --- !u!1 &2832151765364176493
 GameObject:
   m_ObjectHideFlags: 0

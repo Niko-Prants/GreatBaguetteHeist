@@ -18,7 +18,7 @@ public class EnemyFOV : MonoBehaviour
     public LayerMask obstructionMask;
 
     public bool canSeePlayer { get; private set; }
-    public bool caught;
+    public bool caught = false;
 
 
 
